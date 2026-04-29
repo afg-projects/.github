@@ -1,0 +1,53 @@
+name: 使用咨询
+description: 提一个使用、接入或设计理解问题
+title: "[Question]: "
+labels:
+  - question
+body:
+  - type: dropdown
+    id: repository
+    attributes:
+      label: 相关仓库
+      options:
+        - afg-framework
+        - afg
+        - .github
+    validations:
+      required: true
+  - type: dropdown
+    id: module
+    attributes:
+      label: 相关模块
+      options:
+        - core
+        - data-core
+        - data-sql
+        - data-jdbc
+        - data-liquibase
+        - spring-boot-starter
+        - integration/afg-redis
+        - integration/afg-kafka
+        - integration/afg-rabbitmq
+        - integration/afg-websocket
+        - integration/afg-storage
+        - integration/afg-jdbc
+        - integration/afg-nacos
+        - integration/afg-apollo
+        - integration/afg-consul
+        - other
+  - type: textarea
+    id: question
+    attributes:
+      label: 你的问题
+      description: 请尽量把问题描述清楚。
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: 相关背景
+      description: 可以补充你的目标、环境或限制条件。
+      placeholder: |
+        - 使用场景：
+        - Java 版本：
+        - Spring Boot 版本：

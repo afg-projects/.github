@@ -1,0 +1,70 @@
+name: Bug 反馈
+description: 报告一个可复现的问题
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你的反馈。请尽量提供可以稳定复现的信息。
+  - type: dropdown
+    id: repository
+    attributes:
+      label: 影响仓库
+      options:
+        - afg-framework
+        - afg
+        - .github
+    validations:
+      required: true
+  - type: dropdown
+    id: module
+    attributes:
+      label: 影响模块
+      options:
+        - core
+        - data-core
+        - data-sql
+        - data-jdbc
+        - data-liquibase
+        - spring-boot-starter
+        - integration/afg-redis
+        - integration/afg-kafka
+        - integration/afg-rabbitmq
+        - integration/afg-websocket
+        - integration/afg-storage
+        - integration/afg-jdbc
+        - integration/afg-nacos
+        - integration/afg-apollo
+        - integration/afg-consul
+        - other
+  - type: textarea
+    id: problem
+    attributes:
+      label: 问题现象
+      description: 实际发生了什么？
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      description: 请提供最小复现路径。
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望结果
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: 环境信息
+      description: 包括 Java 版本、Spring Boot 版本、操作系统等。
+      placeholder: |
+        - Java: 25
+        - Spring Boot: 4.0.5
+        - OS: Linux

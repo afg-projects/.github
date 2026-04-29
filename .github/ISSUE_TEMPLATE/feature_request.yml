@@ -1,0 +1,61 @@
+name: 功能建议
+description: 提出一个新的能力或改进建议
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: dropdown
+    id: repository
+    attributes:
+      label: 影响仓库
+      options:
+        - afg-framework
+        - afg
+        - .github
+    validations:
+      required: true
+  - type: dropdown
+    id: module
+    attributes:
+      label: 影响模块
+      options:
+        - core
+        - data-core
+        - data-sql
+        - data-jdbc
+        - data-liquibase
+        - spring-boot-starter
+        - integration/afg-redis
+        - integration/afg-kafka
+        - integration/afg-rabbitmq
+        - integration/afg-websocket
+        - integration/afg-storage
+        - integration/afg-jdbc
+        - integration/afg-nacos
+        - integration/afg-apollo
+        - integration/afg-consul
+        - other
+  - type: textarea
+    id: problem
+    attributes:
+      label: 问题背景
+      description: 你想解决什么问题？
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 建议方案
+      description: 你希望怎么做？
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 备选方案
+      description: 可选，但很有帮助。
+  - type: textarea
+    id: impact
+    attributes:
+      label: 可能影响
+      description: 如已知，请说明对架构、兼容性的影响。
